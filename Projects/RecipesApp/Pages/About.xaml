@@ -1,0 +1,181 @@
+﻿<Page x:Class="RecipesApp.Pages.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:RecipesApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="665" 
+      d:DesignWidth="1128"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="Transparent"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      Title="About">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="{StaticResource PrimaryHueMidBrush}"
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Width="400"
+                            Height="400"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="50">
+            <TextBlock Text="Image"
+                                   FontSize="70"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="{StaticResource PrimaryHueMidBrush}"/>
+        </Border>
+
+        <StackPanel Grid.Column="1">
+            
+            <!--About text-->
+            <TextBlock FontFamily="Franklin Gothic"
+                       FontSize="25"
+                       Margin="0,50,0,50">
+                       Hi! my name is Shimon Israel Pur<LineBreak/>
+                       This application is all around food<LineBreak/>
+                       praticularly - recepies
+                       <materialDesign:PackIcon Kind="Receipt"
+                                            Width="25"
+                                            Height="25"
+                                            Margin="-2,0,0,-5"/>.<LineBreak/><LineBreak/> 
+                       
+                       The application allow you to share  
+                       <materialDesign:PackIcon Kind="Share"
+                                            Width="25"
+                                            Height="25"
+                                            Margin="-2,0,0,-5"/><LineBreak/>
+                       and view
+                       <materialDesign:PackIcon Kind="Eye"
+                                            Width="25"
+                                            Height="25"
+                                            Margin="0,0,0,-5"/>
+                       other repecies all over<LineBreak/> 
+                       the world
+                       <materialDesign:PackIcon Kind="World"
+                                            Width="25"
+                                            Height="25"
+                                            Margin="-2,0,0,-5"/>!<LineBreak/> 
+                       Also, you can upload your own recepies<LineBreak/> 
+                       and share them with the community.<LineBreak/>
+            </TextBlock>
+            
+            <TextBlock Text="Contact me :)"
+                       FontFamily="Franklin Gothic"
+                       FontWeight="SemiBold"
+                       FontSize="27"
+                       Margin="10,0,0,0"/>
+            
+            <StackPanel Orientation="Horizontal">
+
+                <!--Github-->
+                <materialDesign:Card Width="150"
+                                                 Height="150"
+                                                 Margin="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Margin="10">
+                            <TextBlock Text="GitHub"
+                                                   FontSize="20"
+                                                   FontWeight="SemiBold"
+                                                   Margin="0,0,0,20"/>
+                            <TextBlock Text="ShimonPur"
+                                                   FontSize="18"
+                                                   FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <Button x:Name="OpenGithub"
+                                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+								            HorizontalAlignment="Right"
+								            VerticalAlignment="Bottom"
+								            Margin="0,0,16,-20"
+                                            Click="OpenGithub_Click">
+                            <materialDesign:PackIcon Kind="Github" 
+                                                                     Width="35"
+                                                                     Height="35"/>
+                        </Button>
+                    </Grid>
+                </materialDesign:Card>
+
+                <!--G-Mail-->
+                <materialDesign:Card Width="150"
+                                                 Height="150"
+                                                 Margin="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140" />
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Margin="10">
+                            <TextBlock Text="G-Mail"
+                                                   FontSize="20"
+                                                   FontWeight="SemiBold"
+                                                   Margin="0,0,0,20"/>
+                            <TextBlock Text="shimonisrh"
+                                                   FontSize="18"
+                                                   FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <Button x:Name="OpenGmail"
+                                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+								            HorizontalAlignment="Right"
+								            VerticalAlignment="Bottom"
+								            Margin="0,0,16,-20"
+                                            Click="OpenGmail_Click">
+                            <materialDesign:PackIcon Kind="Gmail" 
+                                                                 Width="35"
+                                                                 Height="35"/>
+                        </Button>
+                    </Grid>
+                </materialDesign:Card>
+
+                <!--Instagram-->
+                <materialDesign:Card Width="150"
+                                                 Height="150"
+                                                 Margin="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Margin="10">
+                            <TextBlock Text="Instagram"
+                                                   FontSize="20"
+                                                   FontWeight="SemiBold"
+                                                   Margin="0,0,0,20"/>
+                            <TextBlock Text="shimon_pur"
+                                                   FontSize="18"
+                                                   FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <Button x:Name="OpenInstagram"
+                                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+								            HorizontalAlignment="Right"
+								            VerticalAlignment="Bottom"
+								            Margin="0,0,16,-20"
+                                            Click="OpenInstagram_Click">
+                            <materialDesign:PackIcon Kind="Instagram" 
+                                                                 Width="35"
+                                                                 Height="35"/>
+                        </Button>
+                    </Grid>
+                </materialDesign:Card>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>

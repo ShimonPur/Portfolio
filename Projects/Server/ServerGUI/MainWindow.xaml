@@ -1,0 +1,111 @@
+﻿    <Window x:Class="ServerGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="500" 
+        Width="700"
+        MinHeight="300"
+        MinWidth="515"
+        SizeChanged="Window_SizeChanged"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResize"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:controls="clr-namespace:ServerGUI.Controls"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"    
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0"
+                      CornerRadius="25" 
+                      CaptionHeight="0" 
+                      UseAeroCaptionButtons="False" 
+                      ResizeBorderThickness="7"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid Background="Transparent">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Top bar-->
+        <Border Grid.ColumnSpan="2"
+                Background="Black"
+                MouseDown="Top_Bar_MouseDown"
+                BorderThickness="0,0,0,1"
+                BorderBrush="{DynamicResource MaterialDesignCardBackground}">
+            <Grid HorizontalAlignment="Stretch">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!--control button-->
+                <StackPanel Grid.Column="1"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Button Style="{StaticResource OtherButtonHover}"
+                            Width="45"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Click="ButtonMinimize_Click">
+                        <materialDesign:PackIcon Kind="WindowMinimize"
+                                                 Foreground="White"/>
+                    </Button>
+                    <Button Style="{StaticResource OtherButtonHover}"
+                            Width="45"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Click="ButtonMaximize_Click">
+                        <materialDesign:PackIcon Name="ButtonMaximaizeIcon"
+                                                 Kind="WindowMaximize"
+                                                 Foreground="White"/>
+                    </Button>
+                    <Button Style="{StaticResource OtherButtonHover}"
+                            Width="45"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Click="ButtonClose_Click">
+                        <materialDesign:PackIcon Kind="WindowClose"
+                                                 Foreground="White"/>
+                    </Button>
+                </StackPanel>
+
+                <materialDesign:PopupBox Margin="5">
+                    <materialDesign:PopupBox.ToggleContent>
+                        <materialDesign:PackIcon Kind="GearOutline"
+                                                 Width="20"
+                                                 Height="20"
+                                                 Foreground="Azure"/>
+                    </materialDesign:PopupBox.ToggleContent>
+                        <StackPanel>
+                            <Button ToolTip="Run server"
+                                    x:Name="RunButton"
+                                    Content="Run"
+                                    Click="RunButton_Click"/>
+                            <Button ToolTip="Clear Output"
+                                    x:Name="ClearButton"
+                                    Content="Clear"
+                                    Click="ClearButton_Click"/>
+                        </StackPanel>
+                </materialDesign:PopupBox>
+            </Grid>
+        </Border>
+
+        <controls:LogBox Grid.Row="1"
+                         x:Name="LogBoxServer"/>
+        
+        <materialDesign:DialogHost 
+            Grid.RowSpan="2"
+            x:Name="MyDialogHost"/>
+    </Grid>
+</Window> 
+   

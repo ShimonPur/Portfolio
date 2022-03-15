@@ -1,0 +1,227 @@
+﻿<Page x:Class="RecipesApp.Pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:RecipesApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="665" 
+      d:DesignWidth="1128"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      Title="About">
+
+    <!-- Content -->
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.Background>
+            <ImageBrush ImageSource="../Images/Background.jpg" 
+                        Stretch="UniformToFill"
+                        RenderOptions.BitmapScalingMode="NearestNeighbor"
+                        RenderOptions.EdgeMode="Aliased"/>
+        </Grid.Background>
+
+        <!--App name-->
+        <Border HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderThickness="5"
+                CornerRadius="15"
+                Margin="10,10,0,0">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="1,1" EndPoint="0,1" >
+                    <GradientStopCollection>
+                        <GradientStop Color="{DynamicResource Primary900}" Offset="0.3"/>
+                        <GradientStop Color="{DynamicResource Primary800}" Offset="0.6"/>
+                        <GradientStop Color="{DynamicResource Primary700}" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <TextBlock FontSize="80"
+                       TextAlignment="Center"
+                       FontWeight="Medium"
+                       Margin="35">
+                            RECIPUR 
+                            <materialDesign:PackIcon Kind="ReceiptOutline"
+                                                     Width="75"
+                                                     Height="75"
+                                                     Margin="0,0,0,-15"/>
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="1,1" >
+                        <GradientStopCollection>
+                            <GradientStop Color="{DynamicResource Primary900}" Offset="0.3"/>
+                            <GradientStop Color="{DynamicResource Primary600}" Offset="0.6"/>
+                            <GradientStop Color="{DynamicResource Primary300}" Offset="1"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </Border>
+
+        <!--Cards-->
+        <Grid Grid.Row="1"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--Upload Card-->
+            <materialDesign:Card Width="150"
+                                 Height="280"
+                                 Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Source="../Images/Food1.png"
+                           Stretch="UniformToFill"/>
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Bottom"
+							Margin="0,0,16,-20"
+                            Click="SelectUpload_Click">
+                        <materialDesign:PackIcon Kind="Upload" />
+                    </Button>
+
+                    <StackPanel Grid.Row="1"
+								Margin="8 24 8 0">
+                        <TextBlock FontWeight="Bold">
+								        Uplaod!
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+								   VerticalAlignment="Center"
+								   Text="Upload your recepies and share them with everyone!."
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right"
+								Grid.Row="2"
+								Orientation="Horizontal"
+								Margin="8">
+                        <materialDesign:PopupBox Padding="2 0 2 0">
+                            <StackPanel>
+                                <Button Content="More"/>
+                            </StackPanel>
+
+                        </materialDesign:PopupBox>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+
+            <!--Share Card-->
+            <materialDesign:Card Grid.Column="1"
+                                 Width="150"
+                                 Height="280"
+                                 Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Source="../Images/Food2.png"
+                           Stretch="UniformToFill"/>
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Bottom"
+							Margin="0,0,16,-20">
+                        <materialDesign:PackIcon Kind="Share" />
+                    </Button>
+
+                    <StackPanel Grid.Row="1"
+								Margin="8 24 8 0">
+                        <TextBlock FontWeight="Bold"
+                                   FontSize="15">
+								        Share
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+								   VerticalAlignment="Center"
+                                   FontSize="15"
+								   Text="Share your recepies with firends."
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right"
+								Grid.Row="2"
+								Orientation="Horizontal"
+								Margin="8">
+                        <materialDesign:PopupBox Padding="2 0 2 0">
+                            <StackPanel>
+                                <Button Content="More"/>
+                            </StackPanel>
+
+                        </materialDesign:PopupBox>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+
+            <!--View Card-->
+            <materialDesign:Card Grid.Column="2"
+                                 Width="150"
+                                 Height="280"
+                                 Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Source="../Images/Food3.png"
+                           Stretch="UniformToFill"/>
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Bottom"
+							Margin="0,0,16,-20">
+                        <materialDesign:PackIcon Kind="WorldArrowRight" />
+                    </Button>
+
+                    <StackPanel Grid.Row="1"
+						        Margin="8 24 8 0">
+                        <TextBlock FontWeight="Bold"
+                                   FontSize="13">
+								        View Others Recepies
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+								   VerticalAlignment="Center"
+                                   FontSize="13"
+								   Text="View Other peapole Recepies."
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right"
+								Grid.Row="2"
+								Orientation="Horizontal"
+								Margin="8">
+                        <materialDesign:PopupBox Padding="2 0 2 0">
+                            <StackPanel>
+                                <Button Content="More"/>
+                            </StackPanel>
+
+                        </materialDesign:PopupBox>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+
+</Page>
