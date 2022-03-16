@@ -1,4 +1,4 @@
-# Portofilo
+# Portfolio
 
 Hi! my name is Shimon israel pur.  
 In this repo you can find some projects i did and my resume.
