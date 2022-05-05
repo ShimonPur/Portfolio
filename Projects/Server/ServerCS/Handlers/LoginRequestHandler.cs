@@ -24,9 +24,9 @@ namespace ServerCS.Handlers
 
             return requestInfo._id switch
             {
-                (int?)Code.LOGIN => Login(requestInfo),
-                (int?)Code.SIGNUP => Signup(requestInfo),
-                (int?)Code.LOGOUT => Logout(requestInfo),
+                Code.LOGIN => Login(requestInfo),
+                Code.SIGNUP => Signup(requestInfo),
+                Code.LOGOUT => Logout(requestInfo),
                 _ => throw new Exception("Only god knows!"),
             };
         }

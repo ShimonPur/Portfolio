@@ -2,11 +2,11 @@
 {
 	public struct Code
 	{
-		public const uint EXIT = 0;
-		public const uint SERVER_ERROR = 1;
-		public const uint LOGIN = 2;
-		public const uint SIGNUP = 3;
-		public const uint LOGOUT = 4;
+		public const int EXIT = 0;
+		public const int SERVER_ERROR = 1;
+		public const int LOGIN = 2;
+		public const int SIGNUP = 3;
+		public const int LOGOUT = 4;
 	};
 
 	public class Response { }

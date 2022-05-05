@@ -17,7 +17,7 @@ namespace ServerCS.Handlers
 
     internal class RequestHandlerFactory
     {
-        private static Lazy<RequestHandlerFactory> instance = new(() => new RequestHandlerFactory());
+        private readonly static Lazy<RequestHandlerFactory> instance = new(() => new RequestHandlerFactory());
         private readonly LoginManager _loginManager;
         private readonly IDatabase _database;
         private RequestHandlerFactory()

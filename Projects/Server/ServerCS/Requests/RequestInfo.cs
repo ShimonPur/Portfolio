@@ -4,7 +4,7 @@
     {
         public int? _id;
         public DateTime? _recivalTime;
-        public List<byte>? _buffer; 
+        public List<byte>? _buffer;
 
 
         public RequestInfo(int id, DateTime recivalTime, List<byte> buffer)
